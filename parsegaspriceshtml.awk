@@ -27,6 +27,7 @@ inGasPriceRecord && /<dd>/ {
    sub("</dd>[ ]*$","")
    sub("&amp;","\\&")
    address[i,ai[i]]=$0
+   sub("^[ ]*","",address[i,ai[i]])
    # print "address["ai[i]"]="address[i,ai[i]]
    ai[i]++
 }
@@ -58,24 +59,13 @@ inGasPriceRecord && / class="p_area">/ {
 
 inGasPriceRecord && /<a href="\/Profile[.]aspx[?]member=/ {
    sub("^.*<a href=\"/Profile[.]aspx[?]member=","")
-   sub("\".*$","")
-   reporter[i]=$0
-   # print
-}
-
-inGasPriceRecord && expectRelativeTime {
-   expectRelativeTime=False
-   sub("^[ ]*","")
-   sub("[ ]ago[ ]*$","")
-   timeAgo[i]=$0
-   # print
-}
-
-inGasPriceRecord && /<div class="tm" / {
-   sub("^[ ]*<div class=\"tm\" title=\"","")
-   sub("\">[ ]*$","")
-   time[i]=$0
-   expectRelativeTime=True
+   sub("\".*title=\"",",")
+   sub("\"> ",",")
+   sub("<.*$","")
+   split($0,foo,",")
+   reporter[i]=foo[1]
+   time[i]=foo[2]
+   timeAgo[i]=foo[3]
    # print
 }
 
