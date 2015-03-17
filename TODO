@@ -5,8 +5,8 @@ add option to specify URL on command line
 add command line option to specify output format ala date's format string
 add command line option to output in label=value scheme
 improvements to column:
-   specify output separator
-   specify minimum and maximum field widths for particular fields
+    specify output separator
+    specify minimum and maximum field widths for particular fields
 It would be nifty to write a filter to save the data in a database. 
 
 Improve documentation.
