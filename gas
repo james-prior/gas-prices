@@ -18,3 +18,4 @@ improvements to column:
    specify minimum and maximum field widths for particular fields
 It would be nifty to write a filter to save the data in a database. 
 Sounds like a fun thing to do with Python. 
+    good excuse to play with scrapy library
