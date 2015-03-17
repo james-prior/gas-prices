@@ -36,6 +36,10 @@ inGasPriceRecord && /<dt>/ {
    expectName=True
 }
 
+/ad.doubleclick.net/ {
+   $0 = ""
+}
+
 inGasPriceRecord && expectName && /<a href="/ {
    gsub("<img src=\"http://mymarathonstation.com/.*.png\" border=\"\" alt=\"\" />","Marathon")
    gsub("<img src=\"http://duchessshoppe.*.com/.*.png\" border=\"\" alt=\"\" />","Duchess")
