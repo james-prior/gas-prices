@@ -36,6 +36,8 @@ inGasPriceRecord && /<dt>/ {
 }
 
 inGasPriceRecord && expectName && /<a href="/ {
+   gsub("<img src=\"http://mymarathonstation.com/.*.png\" border=\"\" alt=\"\" />","Marathon")
+   gsub("<img src=\"http://duchessshoppe.*.com/.*.png\" border=\"\" alt=\"\" />","Duchess")
    gsub("<img src=\"http://thorntons.*.com/.*.png\" border=\"\" alt=\"\" />","Thorntons")
    gsub("<img src=\"/images/brands/199_p.png\" border=\"\" alt=\"\" />","Thorntons")
    expectName=False
