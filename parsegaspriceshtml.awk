@@ -16,8 +16,8 @@ BEGIN {
 inGasPriceRecord && /<div class="sp_p">/ {
    sub("<div class=\"pd\">","<div class=\"p.\">")
    gsub("\"></div><div class=\"p","")
-   sub("^[ ]*<div class=\"sp_p\"><div class=\"p","")
-   sub("\"></div></div>[ ]*$","")
+   sub("^.*<div class=\"sp_p\"><div class=\"p","")
+   sub("\"></div></div>.*$","")
    # print
    price[i]=$0
 }
