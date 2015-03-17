@@ -1,0 +1,20 @@
+url='http://columbusgasprices.com/index.aspx?s=Y&fuel=A&area=Columbus+-+Central&area=Columbus+-+East&area=Columbus+-+North&area=Columbus+-+West&tme_limit=8'
+tab=`printf '\t'` #Thanks to Seth Hall
+wget -O - -q "$url" \
+| tr -d '\r' \
+| awk -f ~/bin/parsegaspriceshtml.awk \
+| sed -e 's/United Dairy Farmers/UDF/' -e 's/Columbus - //'\
+| grep "$1" \
+| column -t -s "$tab" -c 80
+
+exit 0
+todo:
+
+add option to specify URL on command line
+add command line option to specify output format ala date's format string
+add command line option to output in label=value scheme
+improvements to column:
+   specify output separator
+   specify minimum and maximum field widths for particular fields
+It would be nifty to write a filter to save the data in a database. 
+Sounds like a fun thing to do with Python. 
