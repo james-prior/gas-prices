@@ -42,6 +42,7 @@ inGasPriceRecord && expectName && /<a href="/ {
    gsub("<img src=\"http://thorntons.*.com/.*.png\" border=\"\" alt=\"\" />","Thorntons")
    gsub("<img src=\"/images/brands/199_p.png\" border=\"\" alt=\"\" />","Thorntons")
    gsub("<img src=\"http://mycertifiedoil.com/images/249/price-listing-ad-brand-logo.png\" border=\"\" alt=\"\" />","Certified")
+   gsub("<img src=\"http://bellstores.com/images/253/price-listing-ad-brand-logo.png\" border=\"\" alt=\"\" />","Marathon")
    expectName=False
    sub("</a>[ ]*$","")
    sub("^.*>","")
