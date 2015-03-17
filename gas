@@ -1,6 +1,7 @@
-url='http://www.columbusgasprices.com/GasPriceSearch.aspx?typ=adv&fuel=A&srch=0&area=Columbus+-+Central&area=Columbus+-+NE&area=Columbus+-+North&area=Columbus+-+NW&area=Columbus+-+SW&area=Columbus+-+West&area=Dublin&area=Gahanna&area=Galloway&area=Grandview+Heights&area=Hilliard&area=New+Albany&area=Upper+Arlington&area=Westerville&site=Columbus&tme_limit=8'
 url='http://columbusgasprices.com/index.aspx?s=Y&fuel=A&area=Columbus+-+Central&area=Columbus+-+East&area=Columbus+-+North&area=Columbus+-+West&tme_limit=8'
-tab=`printf '\t'` #Thanks to Seth Hall
+tab=`printf '\t'`
+# Thanks to Seth Hall for the above
+# http://lists.colug.net/pipermail/colug-432/2011-August/001030.html
 wget -O - -q "$url" \
 | tr -d '\r' \
 | awk -f ~/bin/parsegaspriceshtml.awk \
