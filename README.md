@@ -36,7 +36,7 @@ highlight.
 ## Setup
 
 Put gas and g in a $PATH directory.
-Put parsegaspriceshtml.awk in ~/bin/.
+Put parsegaspriceshtml.awk in same directory as gas.
 
 ## Prerequisites
 

@@ -1,10 +1,11 @@
+dir=`dirname "$_"`
 url='http://columbusgasprices.com/index.aspx?s=Y&fuel=A&area=Columbus+-+Central&area=Columbus+-+East&area=Columbus+-+North&area=Columbus+-+West&tme_limit=8'
 tab=`printf '\t'`
 # Thanks to Seth Hall for the above
 # http://lists.colug.net/pipermail/colug-432/2011-August/001030.html
 wget -O - -q "$url" \
 | tr -d '\r' \
-| awk -f ~/bin/parsegaspriceshtml.awk \
+| awk -f "$dir"/parsegaspriceshtml.awk \
 | sed -e 's/United Dairy Farmers/UDF/' -e 's/Columbus - //'\
 | grep "$1" \
 | column -t -s "$tab" -c 80
