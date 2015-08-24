@@ -8,6 +8,6 @@ wget -O - -q "$url" \
 | awk -f "$dir"/parsegaspriceshtml.awk \
 | sed -e 's/United Dairy Farmers/UDF/' -e 's/Columbus - //'\
 | grep "$1" \
-| column -t -s "$tab" -o ' '
+| column -t -s "$tab"
 
 exit 0
