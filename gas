@@ -1,5 +1,5 @@
 dir=`dirname "$_"`
-url='http://columbusgasprices.com/index.aspx?s=Y&fuel=A&area=Columbus+-+Central&area=Columbus+-+East&area=Columbus+-+North&area=Columbus+-+West&tme_limit=8'
+url='http://columbusgasprices.com/Columbus_-_West/index.aspx'
 tab=`printf '\t'`
 # Thanks to Seth Hall for the above
 # http://lists.colug.net/pipermail/colug-432/2011-August/001030.html
