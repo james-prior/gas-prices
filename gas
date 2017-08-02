@@ -1,8 +1,10 @@
 dir=`dirname "$_"`
 url='http://columbusgasprices.com/Columbus_-_West/index.aspx'
+url='http://www.columbusgasprices.com/Columbus_-_West/index.aspx'
 tab=`printf '\t'`
 # Thanks to Seth Hall for the above
 # http://lists.colug.net/pipermail/colug-432/2011-August/001030.html
+# curl -s "$url" \
 wget -O - -q "$url" \
 | tr -d '\r' \
 | awk -f "$dir"/parsegaspriceshtml.awk \
